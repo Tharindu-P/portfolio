@@ -10,8 +10,7 @@
     <header>
         <nav>
             <div class="nav-left">
-                <h1>PORTFOLIO </h1>
-            </div>
+                <h1>PORTFOLIO</h1>
             </div>
             <div class="nav-right">
                 <ul>
@@ -19,8 +18,13 @@
                     <li><button id="btn2" class="nav-btn">CV</button></li>
                     <li><button id="btn3" class="nav-btn">Projets</button></li>
                 </ul>
+                <button id="burger" class="burger-menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
             </div>
-        </nav>        
+        </nav>       
     </header>
 
 
@@ -64,6 +68,13 @@
             });
             document.getElementById("btn3").addEventListener("click", function() {
                 window.location.href = "projets.html"; // Redirige vers la page Projets
+            });
+
+            // Burger menu logic
+            const burger = document.getElementById('burger');
+            const navList = document.querySelector('.nav-right ul');
+            burger.addEventListener('click', () => {
+                navList.classList.toggle('show');
             });
         });
     </script>
