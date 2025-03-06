@@ -1,1 +1,47 @@
-test2
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Tharindu Perera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.pdf">CV</a></li>
+                <li><a href="projets.html">Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="accueil" class="fade-in">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Je suis Tharindu Perera, étudiant en BUT Informatique.</p>
+        <p>Passionné par le développement web et les technologies, voici un aperçu de mes compétences et projets.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Tharindu Perera - Tous droits réservés.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
