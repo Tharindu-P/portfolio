@@ -366,11 +366,19 @@ section {
     .burger-menu {
         display: flex;
     }
-}        footer {
+}        
+footer {
     margin-top: auto; /* Assure que le footer soit en bas */
     background-color: #0c1875;
     color: #eaeaea;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-align: left;
 }
