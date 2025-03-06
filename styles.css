@@ -111,17 +111,6 @@ section {
     text-align: center;
 }
 
-/* Animation de fade-in au scroll */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Conteneur général avec fond blanc transparent */
 .container {
     background-color: rgba(255, 255, 255, 0.1);
@@ -377,4 +366,11 @@ section {
     .burger-menu {
         display: flex;
     }
+}        footer {
+    margin-top: auto; /* Assure que le footer soit en bas */
+    background-color: #0c1875;
+    color: #eaeaea;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
