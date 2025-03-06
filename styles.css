@@ -243,7 +243,6 @@ section {
     font-weight: 200;
     font-size: 16px;
 }
-
 /* Séparateur des liens sociaux */
 .social-media:before {
     content: " ";
@@ -255,21 +254,31 @@ section {
 }
 
 /* Styles des liens sociaux */
+.social-media {
+    display: block; /* Assure que l'élément .social-media prend une nouvelle ligne */
+    text-align: center; /* Centre les icônes */
+    margin-top: 20px; /* Ajoute un espace au-dessus des icônes */
+}
+
+/* Styles des liens sociaux à l'intérieur de .social-media */
 .social-media a {
     position: relative;
     margin-right: 15px;
     text-decoration: none;
     color: inherit;
+    display: inline-block; /* Les liens s'affichent sur la même ligne */
 }
 
+/* Supprimer la marge à droite du dernier lien */
 .social-media a:last-child {
     margin-right: 0;
 }
 
 /* Taille des icônes SVG dans les liens sociaux */
 .social-media a svg {
-    width: 1.1rem;
-    fill: currentColor;
+    width: 30px; /* Taille réduite des icônes */
+    height: 30px; /* Taille réduite des icônes */
+    fill: currentColor; /* Utilise la couleur actuelle du texte */
 }
 
 /* Tooltip pour les liens sociaux */

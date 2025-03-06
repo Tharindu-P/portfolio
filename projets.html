@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Tharindu Perera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <h1>PORTFOLIO </h1>
+            </div>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><button id="btn1" class="nav-btn">Accueil</button></li>
+                    <li><button id="btn2" class="nav-btn">CV</button></li>
+                    <li><button id="btn3" class="nav-btn">Projets</button></li>
+                </ul>
+            </div>
+        </nav>        
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Tharindu Perera - Tous droits réservés.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Code pour rediriger vers les pages lors du clic sur les boutons de navigation
+            document.getElementById("btn1").addEventListener("click", function() {
+                window.location.href = "index.html"; // Redirige vers la page d'accueil
+            });
+            document.getElementById("btn2").addEventListener("click", function() {
+                window.location.href = "cv.pdf"; // Redirige vers la page CV
+            });
+            document.getElementById("btn3").addEventListener("click", function() {
+                window.location.href = "projets.html"; // Redirige vers la page Projets
+            });
+        });
+    </script>
+</body>
+</html>
