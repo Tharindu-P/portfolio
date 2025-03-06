@@ -1,34 +1,108 @@
 /* Styles généraux */
 body {
-    background-color: #0c0c0c;
-    color: white;
-    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    --s: 37px; /* contrôle la taille */
+  
+    --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+    --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+    --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+    --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+    background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+      var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+      var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+    background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+    color: #eaeaea; /* Texte principal en gris clair pour une meilleure lisibilité */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Permet de s'assurer que le footer soit toujours en bas */
 }
 
-/* Navigation */
+/* Styles de la navigation */
 nav {
     background-color: #0c1875;
-    padding: 15px;
-    text-align: center;
+    padding: 15px 0; /* Ajouter un peu de padding pour un meilleur espacement */
+    position: fixed; /* Fixer la barre en haut de la page */
+    top: 0; /* Coller en haut */
+    width: 100%; /* Occupation totale de la largeur */
+    z-index: 1000; /* S'assurer qu'elle soit au-dessus des autres éléments */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre discrète pour un effet de profondeur */
+    display: flex;
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centrer verticalement */
 }
+
+/* Sections du nav */
+nav .nav-left,
+nav .nav-center,
+nav .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-left p,
+nav .nav-center p,
+nav .nav-right {
+    margin: 0;
+    font-size: 1em;
+    color: white;
+}
+
+nav .nav-left {
+    flex: 1; /* Prendre tout l'espace possible à gauche */
+}
+
+nav .nav-center {
+    flex: 2; /* Prendre plus d'espace au centre pour le texte "PORTFOLIO Tharindu Perera" */
+    text-align: center;
+    font-size: 1.8em;
+    color: white;
+}
+
+nav .nav-right {
+    display: flex;
+    justify-content: flex-end; /* Alignement des boutons à droite */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    gap: 15px; /* Espacement entre les boutons */
 }
+
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+
+.nav-btn {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
 }
-nav ul li a:hover {
-    text-decoration: underline;
+
+.nav-btn:hover,
+.nav-btn:focus {
+    color: #ffffff;
+    background: #008cff;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+        0 0 100px #008cff;
 }
 
 /* Section principale */
@@ -48,12 +122,192 @@ section {
     transform: translateY(0);
 }
 
-/* Footer */
-footer {
-    background-color: #0c1875;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
+/* Conteneur général avec fond blanc transparent */
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    color: #eaeaea; /* Texte de contenu en gris clair pour un meilleur contraste */
+}
+
+/* Section compétences stylisée */
+#competences {
+    display: flex;
+    flex-wrap: wrap; /* Les éléments se déplacent sur la ligne suivante s'il n'y a pas assez de place */
+    justify-content: space-between; /* Aligne les boîtes avec de l'espace égal entre elles */
+    gap: 20px; /* Espacement entre les boîtes */
+    padding: 30px;
+}
+
+#competences h2 {
     width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff; /* Les titres sont en blanc pour bien ressortir */
+}
+
+.competence-category {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    flex: 1 1 calc(50% - 20px); /* Taille de chaque boîte à 50% avec un espacement */
+    text-align: center;
+    margin: 10px; /* Marge entre les boîtes */
+}
+
+.competence-category h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #ffbf00; /* Couleur dorée pour les sous-titres */
+}
+
+.competence-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.competence-category li {
+    padding: 5px 0;
+    font-size: 1.2em;
+    color: #eaeaea; /* Texte en gris clair pour les éléments de la liste */
+}
+
+/* Responsive : Sur les petits écrans, on met chaque boîte sur une ligne */
+@media (max-width: 768px) {
+    .competence-category {
+        flex: 1 1 100%; /* Les éléments prennent toute la largeur de l'écran sur les petits écrans */
+    }
+}
+
+/* Styles de la carte client */
+.card-client {
+    background: #0c1875;
+    width: 13rem;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 4px solid #7cdacc;
+    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    margin: auto;
+    margin-top: 150px; /* Décale la carte en dessous de la barre de navigation */
+}
+
+/* Effet au survol de la carte */
+.card-client:hover {
+    transform: translateY(-10px);
+}
+
+/* Style de l'image utilisateur */
+.user-picture {
+    overflow: hidden;
+    object-fit: cover;
+    width: 5rem;
+    height: 5rem;
+    border: 4px solid #7cdacc;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Icône SVG dans l'image utilisateur */
+.user-picture svg {
+    width: 2.5rem;
+    fill: currentColor;
+}
+
+/* Style du nom du client */
+.name-client {
+    margin: 0;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Style pour le sous-titre du nom du client */
+.name-client span {
+    display: block;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+/* Séparateur des liens sociaux */
+.social-media:before {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
+    background: #7cdacc;
+}
+
+/* Styles des liens sociaux */
+.social-media a {
+    position: relative;
+    margin-right: 15px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-media a:last-child {
+    margin-right: 0;
+}
+
+/* Taille des icônes SVG dans les liens sociaux */
+.social-media a svg {
+    width: 1.1rem;
+    fill: currentColor;
+}
+
+/* Tooltip pour les liens sociaux */
+.tooltip-social {
+    background: #262626;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0.5rem 0.4rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -90%);
+    transition: all 0.2s ease;
+    z-index: 1;
+}
+
+/* Flèche du tooltip */
+.tooltip-social:after {
+    content: " ";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+    border-top-color: #262626;
+}
+
+/* Apparition du tooltip au survol */
+.social-media a:hover .tooltip-social {
+    opacity: 1;
+    transform: translate(-50%, -130%);
 }

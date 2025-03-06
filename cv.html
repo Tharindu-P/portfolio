@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV</title>
+    <title>Portfolio - Tharindu Perera</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,14 +16,75 @@
             </ul>
         </nav>
     </header>
-
-    <section id="cv" class="fade-in">
-        <h1>Mon CV</h1>
-        <iframe src="cv.pdf" width="100%" height="700px" style="border: none;"></iframe>
+    
+    <section id="accueil" class="fade-in">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Je suis Tharindu Perera, étudiant en BUT Informatique.</p>
+        <p>Passionné par le développement web et les technologies, voici un aperçu de mes compétences et projets.</p>
     </section>
-
+    
+    <section id="competences" class="fade-in">
+        <div class="container">
+            <h2>Mes Compétences</h2>
+            <div class="competence-category">
+                <h3>Front-End</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Vue.JS</li>
+                    <li>JQuery</li>
+                </ul>
+            </div>
+            <div class="competence-category">
+                <h3>Langages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+            <div class="competence-category">
+                <h3>Base de Données</h3>
+                <ul>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="competence-category">
+                <h3>Outils Techniques</h3>
+                <ul>
+                    <li>Visual Studio Code</li>
+                    <li>Linux</li>
+                    <li>Eclipse</li>
+                    <li>Github</li>
+                    <li>Suite Office</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <p>&copy; 2024 Tharindu Perera - Tous droits réservés.</p>
     </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
