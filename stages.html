@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio - Stages</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html" class="no-underline text-black">
+                    <h1>PORTFOLIO</h1>
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><button id="btn1" class="nav-btn">Accueil</button></li>
+                    <li><button id="btn2" class="nav-btn">CV</button></li>
+                    <li><button id="btn3" class="nav-btn">Projets</button></li>
+                    <li><button id="btn4" class="nav-btn">Stages</button></li>
+                </ul>
+                <button id="burger" class="burger-menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div><br><br><br><br><br><br><br><br></div>
+
+    <main>
+        <center><h1>Bilans de mes derniers stages</h1>
+            <b><p>Vous trouverez ici le bilan des stages effectués durant ma formation</p></b></center>
+        <section id="stages" class="fade-in py-12 container">
+            
+            <article class="stage-bilan">
+                <h2>Stage chez M&amp;M (2024)</h2>
+                <p>
+                    Lors de ma deuxième année, j’ai eu l’opportunité de réaliser un stage au sein de la startup <strong>M&amp;M</strong>, spécialisée dans l’innovation numérique. Ma mission principale consistait à développer des scripts d’automatisation web en <strong>Python</strong>, afin d’optimiser les processus internes de l’entreprise.
+                    <br><br>
+                    Ce stage m’a permis de consolider mes compétences techniques, notamment en <strong>Python</strong>, <strong>HTML</strong> et <strong>CSS</strong>, tout en évoluant dans un environnement professionnel dynamique. J’ai pu faire preuve d’<strong>autonomie</strong>, de <strong>rigueur</strong> et d’<strong>esprit d’initiative</strong>, ce qui m’a permis de contribuer efficacement à l’équipe et d’améliorer la productivité globale de l’entreprise.
+                </p>
+            </article>
+            <section class="rapport-stage mt-8">
+                <h2>Rapport de stage</h2>
+                <p>
+                    Vous pouvez consulter mon rapport complet de stage ici : 
+                    <a href="Rapport2024.pdf" target="_blank" rel="noopener">Télécharger le rapport (PDF)</a>
+                </p>
+            </section>
+        </section>
+        <br><br><br>
+        <section id="stages" class="fade-in py-12 container">
+        <article class="stage-bilan">
+            <h2>Stage chez l'Urssaf (2025)</h2>
+            <p>
+                Pour mon stage de fin de BUT3, j’ai intégré le <strong>pôle Big Data de l’URSSAF</strong> à Montreuil. J’ai travaillé sur un projet de <strong>fiabilisation automatique des adresses</strong>, afin de les rendre exploitables dans les outils internes. L’objectif était de corriger, standardiser et géolocaliser des adresses saisies par les utilisateurs (avec erreurs ou imprécisions).
+                <br><br>
+                Mon travail s’est articulé autour de plusieurs axes : génération d’adresses erronées pour les tests, nettoyage des données, calcul de similarité avec la BAN (Base Adresse Nationale) à l’aide de <strong>Rapidfuzz</strong>, et optimisation des traitements avec <strong>Dask</strong>. Le résultat : un script modulaire, rapide.
+                <br><br>
+                Ce stage m’a permis d’approfondir mes compétences en <strong>Python</strong> et en traitement de données massives, tout en me familiarisant avec les contraintes et outils du monde professionnel. À la suite de ce stage, j’ai obtenu une <strong>proposition d’alternance</strong> pour poursuivre le projet à plus grande échelle. Je souhaite désormais m’orienter vers le domaine du <strong>Big Data</strong> pour continuer à développer des solutions de traitement intelligent des données.
+            </p>            
+        </article>
+        <section class="rapport-stage mt-8">
+            <h2>Rapport de stage</h2>
+            <p>
+                Vous pouvez consulter mon rapport complet de stage ici : 
+                <a href="Rapport2025.pdf" target="_blank" rel="noopener">Télécharger le rapport (PDF)</a>
+            </p>
+        </section>
+    </section>
+    <br><br><br>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tharindu Perera - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade-in animation observer
+            const sections = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(section => observer.observe(section));
+
+            // Navigation buttons
+            document.getElementById("btn1").addEventListener("click", () => window.location.href = "index.html");
+            document.getElementById("btn2").addEventListener("click", () => window.location.href = "cv.pdf");
+            document.getElementById("btn3").addEventListener("click", () => window.location.href = "projets.html");
+            document.getElementById("btn4").addEventListener("click", () => window.location.href = "stages.html");
+
+            // Burger menu toggle
+            const burger = document.getElementById('burger');
+            const navList = document.querySelector('.nav-right ul');
+            burger.addEventListener('click', () => navList.classList.toggle('show'));
+        });
+    </script>
+</body>
+</html>
