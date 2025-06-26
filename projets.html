@@ -11,13 +11,17 @@
     <header>
         <nav>
             <div class="nav-left">
-                <h1>PORTFOLIO</h1>
+                <a href="index.html" class="no-underline text-black">
+                    <h1>PORTFOLIO</h1>
+                </a>
+            </div>
             </div>
             <div class="nav-right">
                 <ul>
                     <li><button id="btn1" class="nav-btn">Accueil</button></li>
                     <li><button id="btn2" class="nav-btn">CV</button></li>
                     <li><button id="btn3" class="nav-btn">Projets</button></li>
+                    <li><button id="btn4" class="nav-btn">Stages</button></li>
                 </ul>
                 <button id="burger" class="burger-menu">
                     <span class="burger-line"></span>
@@ -155,16 +159,10 @@
             });
 
             // Navigation
-            document.getElementById("btn1").addEventListener("click", function() {
-                window.location.href = "index.html";
-            });
-            document.getElementById("btn2").addEventListener("click", function() {
-                window.location.href = "cv.pdf";
-            });
-            document.getElementById("btn3").addEventListener("click", function() {
-                window.location.href = "projets.html";
-            });
-
+            document.getElementById("btn1").addEventListener("click", () => window.location.href = "index.html");
+            document.getElementById("btn2").addEventListener("click", () => window.location.href = "cv.pdf");
+            document.getElementById("btn3").addEventListener("click", () => window.location.href = "projets.html");
+            document.getElementById("btn4").addEventListener("click", () => window.location.href = "stages.html");
             // Burger menu
             const burger = document.getElementById('burger');
             const navList = document.querySelector('.nav-right ul');

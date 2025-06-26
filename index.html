@@ -17,6 +17,7 @@
                     <li><button id="btn1" class="nav-btn">Accueil</button></li>
                     <li><button id="btn2" class="nav-btn">CV</button></li>
                     <li><button id="btn3" class="nav-btn">Projets</button></li>
+                    <li><button id="btn4" class="nav-btn">Stages</button></li>
                 </ul>
                 <button id="burger" class="burger-menu">
                     <span class="burger-line"></span>
@@ -61,7 +62,7 @@
         <center><h1>Présentation</h1>
         <h4>Je suis Tharindu Perera, étudiant en BUT Informatique à Sorbonne Paris Nord. J’ai choisi ce parcours pour développer mes compétences en développement web, gestion de bases de données et programmation logicielle.
         Mon expérience en développement d’applications, en Big Data et mes stages en entreprise m'ont permis de renforcer mes compétences techniques et ma capacité à travailler en équipe.
-        À terme, je souhaite évoluer vers un poste dans le développement logiciel ou la gestion de projets informatiques, tout en continuant à apprendre et à m’adapter aux nouvelles technologies.
+        À terme, je souhaite évoluer vers un poste en tant que data scientist, tout en continuant à apprendre et à m’adapter aux nouvelles technologies.
         </h4></center>
 
     <!-- Section Parcours -->
@@ -161,17 +162,10 @@
                 observer.observe(section);
             });
 
-            // Code pour rediriger vers les pages lors du clic sur les boutons de navigation
-            document.getElementById("btn1").addEventListener("click", function() {
-                window.location.href = "index.html"; // Redirige vers la page d'accueil
-            });
-            document.getElementById("btn2").addEventListener("click", function() {
-                window.location.href = "cv.pdf"; // Redirige vers la page CV
-            });
-            document.getElementById("btn3").addEventListener("click", function() {
-                window.location.href = "projets.html"; // Redirige vers la page Projets
-            });
-
+            document.getElementById("btn1").addEventListener("click", () => window.location.href = "index.html");
+            document.getElementById("btn2").addEventListener("click", () => window.location.href = "cv.pdf");
+            document.getElementById("btn3").addEventListener("click", () => window.location.href = "projets.html");
+            document.getElementById("btn4").addEventListener("click", () => window.location.href = "stages.html");
             // Burger menu logic
             const burger = document.getElementById('burger');
             const navList = document.querySelector('.nav-right ul');
